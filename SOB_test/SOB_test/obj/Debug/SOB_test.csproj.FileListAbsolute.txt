@@ -1,0 +1,6 @@
+c:\users\haku\documents\visual studio 2012\Projects\SOB_test\SOB_test\bin\Debug\SOB_test.exe.config
+c:\users\haku\documents\visual studio 2012\Projects\SOB_test\SOB_test\obj\Debug\SOB_test.csprojResolveAssemblyReference.cache
+c:\users\haku\documents\visual studio 2012\Projects\SOB_test\SOB_test\bin\Debug\SOB_test.exe
+c:\users\haku\documents\visual studio 2012\Projects\SOB_test\SOB_test\bin\Debug\SOB_test.pdb
+c:\users\haku\documents\visual studio 2012\Projects\SOB_test\SOB_test\obj\Debug\SOB_test.exe
+c:\users\haku\documents\visual studio 2012\Projects\SOB_test\SOB_test\obj\Debug\SOB_test.pdb
