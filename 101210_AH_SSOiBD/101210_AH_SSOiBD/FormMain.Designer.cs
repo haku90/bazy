@@ -31,6 +31,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.programToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zamknijToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bazaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.polaczToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,11 +45,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.bazaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.polaczToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btDodaj = new System.Windows.Forms.Button();
             this.cbEdit = new System.Windows.Forms.CheckBox();
+            this.btDelete = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.cbNazwa = new System.Windows.Forms.CheckBox();
+            this.cbIlosc = new System.Windows.Forms.CheckBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.menuStrip1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -73,9 +79,24 @@
             // zamknijToolStripMenuItem
             // 
             this.zamknijToolStripMenuItem.Name = "zamknijToolStripMenuItem";
-            this.zamknijToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.zamknijToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.zamknijToolStripMenuItem.Text = "Zamknij";
             this.zamknijToolStripMenuItem.Click += new System.EventHandler(this.zamknijToolStripMenuItem_Click);
+            // 
+            // bazaToolStripMenuItem
+            // 
+            this.bazaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.polaczToolStripMenuItem});
+            this.bazaToolStripMenuItem.Name = "bazaToolStripMenuItem";
+            this.bazaToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.bazaToolStripMenuItem.Text = "Baza";
+            // 
+            // polaczToolStripMenuItem
+            // 
+            this.polaczToolStripMenuItem.Name = "polaczToolStripMenuItem";
+            this.polaczToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
+            this.polaczToolStripMenuItem.Text = "Polacz";
+            this.polaczToolStripMenuItem.Click += new System.EventHandler(this.polaczToolStripMenuItem_Click);
             // 
             // listBox1
             // 
@@ -184,21 +205,6 @@
             this.label7.TabIndex = 14;
             this.label7.Text = "kubatura:";
             // 
-            // bazaToolStripMenuItem
-            // 
-            this.bazaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.polaczToolStripMenuItem});
-            this.bazaToolStripMenuItem.Name = "bazaToolStripMenuItem";
-            this.bazaToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.bazaToolStripMenuItem.Text = "Baza";
-            // 
-            // polaczToolStripMenuItem
-            // 
-            this.polaczToolStripMenuItem.Name = "polaczToolStripMenuItem";
-            this.polaczToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.polaczToolStripMenuItem.Text = "Polacz";
-            this.polaczToolStripMenuItem.Click += new System.EventHandler(this.polaczToolStripMenuItem_Click);
-            // 
             // btDodaj
             // 
             this.btDodaj.Location = new System.Drawing.Point(120, 155);
@@ -218,6 +224,58 @@
             this.cbEdit.TabIndex = 16;
             this.cbEdit.Text = "edytuj ";
             this.cbEdit.UseVisualStyleBackColor = true;
+            this.cbEdit.CheckedChanged += new System.EventHandler(this.cbEdit_CheckedChanged);
+            // 
+            // btDelete
+            // 
+            this.btDelete.Location = new System.Drawing.Point(120, 184);
+            this.btDelete.Name = "btDelete";
+            this.btDelete.Size = new System.Drawing.Size(100, 23);
+            this.btDelete.TabIndex = 17;
+            this.btDelete.Text = "Usun";
+            this.btDelete.UseVisualStyleBackColor = true;
+            this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(478, 126);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Sortuj";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // cbNazwa
+            // 
+            this.cbNazwa.AutoSize = true;
+            this.cbNazwa.Location = new System.Drawing.Point(6, 18);
+            this.cbNazwa.Name = "cbNazwa";
+            this.cbNazwa.Size = new System.Drawing.Size(57, 17);
+            this.cbNazwa.TabIndex = 19;
+            this.cbNazwa.Text = "nazwa";
+            this.cbNazwa.UseVisualStyleBackColor = true;
+            // 
+            // cbIlosc
+            // 
+            this.cbIlosc.AutoSize = true;
+            this.cbIlosc.Location = new System.Drawing.Point(6, 36);
+            this.cbIlosc.Name = "cbIlosc";
+            this.cbIlosc.Size = new System.Drawing.Size(47, 17);
+            this.cbIlosc.TabIndex = 21;
+            this.cbIlosc.Text = "ilosc";
+            this.cbIlosc.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.cbIlosc);
+            this.groupBox1.Controls.Add(this.cbNazwa);
+            this.groupBox1.Location = new System.Drawing.Point(478, 48);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(93, 72);
+            this.groupBox1.TabIndex = 22;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Sortuj według:";
             // 
             // FormMain
             // 
@@ -225,6 +283,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(642, 262);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btDelete);
             this.Controls.Add(this.cbEdit);
             this.Controls.Add(this.btDodaj);
             this.Controls.Add(this.label7);
@@ -245,6 +306,8 @@
             this.Text = "FormMain";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,5 +334,10 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btDodaj;
         private System.Windows.Forms.CheckBox cbEdit;
+        private System.Windows.Forms.Button btDelete;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox cbNazwa;
+        private System.Windows.Forms.CheckBox cbIlosc;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

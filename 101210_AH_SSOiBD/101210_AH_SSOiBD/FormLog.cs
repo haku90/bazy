@@ -40,10 +40,12 @@ namespace _101210_AH_SSOiBD
             try
             {
                 conn = new MySqlConnection(connectionString);
-                
+ 
                 conn.Open();
+              
                 MessageBox.Show("udalo sie polaczyc z baza danych", "Info", MessageBoxButtons.OK);
                 conn.Close();
+               
             }
             catch (Exception e1)
             {
@@ -56,5 +58,6 @@ namespace _101210_AH_SSOiBD
             fMain.Show();
             
         }
+       
     }
 }

@@ -30,9 +30,9 @@ namespace _101210_AH_SSOiBD
             
             
             InitializeComponent();
-          
 
-            connAndRead();
+            sql = "select *from artykuly";
+            connAndRead(sql);
         }
 
         private void zamknijToolStripMenuItem_Click(object sender, EventArgs e)
@@ -75,11 +75,14 @@ namespace _101210_AH_SSOiBD
                         }
                         else
                         {
-                            sql = "";
-                            //UPDATE ksiazka_adresowa SET adres = 'ul. Krakowska 16' WHERE id = 2;
+                            sql = "update artykuly SET nazwa='"+tBnazwa.Text+"',ilosc="+tBilosc.Text+",kubatura='"+tBkubatura.Text+"'where lp="+tBlp.Text+";";
+                            
                         }
                         connAndExecute(sql);
-                        connAndRead();
+                        sql = "Select *from artykuly";
+                        connAndRead(sql);
+                        clearTb();
+                        cbEdit.Checked = false;
                     }
                 }
             }
@@ -88,14 +91,14 @@ namespace _101210_AH_SSOiBD
                 MessageBox.Show("Nalezy wypelnic nazwa,ilosc,kubatura");
             }
         }
-        public void connAndRead()
+        public void connAndRead(string sql)
         {
-            sql = sql = "SELECT * FROM artykuly";
+            string ans = sql;
             listBox1.Items.Clear();
             try
             {
                 conn.Open();
-                cmd.CommandText = sql;
+                cmd.CommandText = ans;
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
@@ -105,7 +108,7 @@ namespace _101210_AH_SSOiBD
                     listBox1.Items.Add(thisrow);
                 }
                 conn.Close();
-                MessageBox.Show("odswiezono lokalna baze danych");
+             
             }
             catch (MySqlException exp)
             {
@@ -116,11 +119,17 @@ namespace _101210_AH_SSOiBD
         }
         public void connAndExecute(string ans) 
         {
-            conn.Open();
-            cmd.CommandText = ans;
-            cmd.ExecuteNonQuery();
-            conn.Close();
-            MessageBox.Show("Rekord zmieniony/dodany");
+            try
+            {
+                conn.Open();
+                cmd.CommandText = ans;
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -132,6 +141,57 @@ namespace _101210_AH_SSOiBD
             tBkubatura.Text = aray[3];
             cbEdit.Checked = true;
 
+        }
+
+        private void btDelete_Click(object sender, EventArgs e)
+        {
+            sql = "delete from artykuly where lp=" + tBlp.Text + ";";
+            connAndExecute(sql);
+            sql = "select *from artykuly";
+            connAndRead(sql);
+            clearTb();
+            cbEdit.Checked = false;
+
+        }
+        public void clearTb()
+        {
+            tBilosc.Text = "";
+            tBkubatura.Text = "";
+            tBlp.Text = "";
+            tBnazwa.Text = "";
+        }
+
+        private void cbEdit_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbEdit.Checked==true)
+                tBlp.ReadOnly = true;
+            else
+                tBlp.ReadOnly = false;
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (cbIlosc.Checked == true)
+            {
+                if (cbNazwa.Checked == true)
+                {
+                    sql = "select *from artykuly order by ilosc,nazwa;";
+                }
+                else
+                    sql = "select *from artykuly order by ilosc;";
+               
+            }
+            else 
+            {
+                if (cbNazwa.Checked == true)
+                    sql = "select *from artykuly order by nazwa;";
+                else
+                {
+                    MessageBox.Show("Wybierz po jakim atrybucie chcesz sortowac");
+                    return;
+                }
+            }
+            connAndRead(sql);
         }
     }
 }
