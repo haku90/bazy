@@ -1,0 +1,10 @@
+c:\users\haku\documents\visual studio 2012\Projects\101210_AH_SSOiBD\101210_AH_SSOiBD\bin\Debug\101210_AH_SSOiBD.exe.config
+c:\users\haku\documents\visual studio 2012\Projects\101210_AH_SSOiBD\101210_AH_SSOiBD\bin\Debug\101210_AH_SSOiBD.exe
+c:\users\haku\documents\visual studio 2012\Projects\101210_AH_SSOiBD\101210_AH_SSOiBD\bin\Debug\101210_AH_SSOiBD.pdb
+c:\users\haku\documents\visual studio 2012\Projects\101210_AH_SSOiBD\101210_AH_SSOiBD\obj\Debug\101210_AH_SSOiBD.csprojResolveAssemblyReference.cache
+c:\users\haku\documents\visual studio 2012\Projects\101210_AH_SSOiBD\101210_AH_SSOiBD\obj\Debug\_101210_AH_SSOiBD.FormLog.resources
+c:\users\haku\documents\visual studio 2012\Projects\101210_AH_SSOiBD\101210_AH_SSOiBD\obj\Debug\_101210_AH_SSOiBD.FormMain.resources
+c:\users\haku\documents\visual studio 2012\Projects\101210_AH_SSOiBD\101210_AH_SSOiBD\obj\Debug\_101210_AH_SSOiBD.Properties.Resources.resources
+c:\users\haku\documents\visual studio 2012\Projects\101210_AH_SSOiBD\101210_AH_SSOiBD\obj\Debug\101210_AH_SSOiBD.csproj.GenerateResource.Cache
+c:\users\haku\documents\visual studio 2012\Projects\101210_AH_SSOiBD\101210_AH_SSOiBD\obj\Debug\101210_AH_SSOiBD.exe
+c:\users\haku\documents\visual studio 2012\Projects\101210_AH_SSOiBD\101210_AH_SSOiBD\obj\Debug\101210_AH_SSOiBD.pdb
