@@ -157,7 +157,7 @@ namespace _101210_AH_SSOiBD
         {
             tBilosc.Text = "";
             tBkubatura.Text = "";
-            tBlp.Text = "";
+            tBlp.Text = "0";
             tBnazwa.Text = "";
         }
 
@@ -171,27 +171,32 @@ namespace _101210_AH_SSOiBD
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            if (cbIlosc.Checked == true)
-            {
-                if (cbNazwa.Checked == true)
-                {
-                    sql = "select *from artykuly order by ilosc,nazwa;";
-                }
-                else
-                    sql = "select *from artykuly order by ilosc;";
-               
-            }
-            else 
-            {
-                if (cbNazwa.Checked == true)
-                    sql = "select *from artykuly order by nazwa;";
-                else
-                {
-                    MessageBox.Show("Wybierz po jakim atrybucie chcesz sortowac");
-                    return;
-                }
-            }
+            if(rBilosc.Checked==true)
+                sql = "select *from artykuly order by ilosc;";
+
+            if (rBlp.Checked == true)
+                sql = "select *from artykuly order by lp;";
+            if (rBnazwa.Checked == true)
+                sql = "select *from artykuly order by nazwa;";
+
             connAndRead(sql);
+        }
+
+        private void btOrder_Click(object sender, EventArgs e)
+        {
+            sql="select *from artykuly where ilosc<"+tBmin.Text+";";
+            connAndRead(sql);
+        }
+
+        private void ąToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            sql = "select *from artykuly;";
+            connAndRead(sql);
+        }
+
+        private void informacjeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Program został wykonany na potrzeby zaliczenia przedmiotu, kopiowanie oraz rozpowszechnianie jest zabraonione, autorem programu jest: Adam Hakowski.");
         }
     }
 }

@@ -124,7 +124,11 @@
             this.Controls.Add(this.tBuser);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tBip);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormLog";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Klient";
             this.ResumeLayout(false);
             this.PerformLayout();

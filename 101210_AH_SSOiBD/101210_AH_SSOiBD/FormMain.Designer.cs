@@ -33,6 +33,7 @@
             this.zamknijToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bazaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.polaczToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ąToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,9 +50,14 @@
             this.cbEdit = new System.Windows.Forms.CheckBox();
             this.btDelete = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.cbNazwa = new System.Windows.Forms.CheckBox();
-            this.cbIlosc = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tBmin = new System.Windows.Forms.TextBox();
+            this.btOrder = new System.Windows.Forms.Button();
+            this.rBlp = new System.Windows.Forms.RadioButton();
+            this.rBilosc = new System.Windows.Forms.RadioButton();
+            this.rBnazwa = new System.Windows.Forms.RadioButton();
+            this.informacjeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -71,7 +77,8 @@
             // programToolStripMenuItem
             // 
             this.programToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.zamknijToolStripMenuItem});
+            this.zamknijToolStripMenuItem,
+            this.informacjeToolStripMenuItem});
             this.programToolStripMenuItem.Name = "programToolStripMenuItem";
             this.programToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.programToolStripMenuItem.Text = "Program";
@@ -86,7 +93,8 @@
             // bazaToolStripMenuItem
             // 
             this.bazaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.polaczToolStripMenuItem});
+            this.polaczToolStripMenuItem,
+            this.ąToolStripMenuItem});
             this.bazaToolStripMenuItem.Name = "bazaToolStripMenuItem";
             this.bazaToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.bazaToolStripMenuItem.Text = "Baza";
@@ -94,9 +102,16 @@
             // polaczToolStripMenuItem
             // 
             this.polaczToolStripMenuItem.Name = "polaczToolStripMenuItem";
-            this.polaczToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
-            this.polaczToolStripMenuItem.Text = "Polacz";
+            this.polaczToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.polaczToolStripMenuItem.Text = "Ustawienia ";
             this.polaczToolStripMenuItem.Click += new System.EventHandler(this.polaczToolStripMenuItem_Click);
+            // 
+            // ąToolStripMenuItem
+            // 
+            this.ąToolStripMenuItem.Name = "ąToolStripMenuItem";
+            this.ąToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.ąToolStripMenuItem.Text = "Wyświetl ";
+            this.ąToolStripMenuItem.Click += new System.EventHandler(this.ąToolStripMenuItem_Click);
             // 
             // listBox1
             // 
@@ -238,7 +253,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(478, 126);
+            this.button1.Location = new System.Drawing.Point(478, 136);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 18;
@@ -246,36 +261,85 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // cbNazwa
-            // 
-            this.cbNazwa.AutoSize = true;
-            this.cbNazwa.Location = new System.Drawing.Point(6, 18);
-            this.cbNazwa.Name = "cbNazwa";
-            this.cbNazwa.Size = new System.Drawing.Size(57, 17);
-            this.cbNazwa.TabIndex = 19;
-            this.cbNazwa.Text = "nazwa";
-            this.cbNazwa.UseVisualStyleBackColor = true;
-            // 
-            // cbIlosc
-            // 
-            this.cbIlosc.AutoSize = true;
-            this.cbIlosc.Location = new System.Drawing.Point(6, 36);
-            this.cbIlosc.Name = "cbIlosc";
-            this.cbIlosc.Size = new System.Drawing.Size(47, 17);
-            this.cbIlosc.TabIndex = 21;
-            this.cbIlosc.Text = "ilosc";
-            this.cbIlosc.UseVisualStyleBackColor = true;
-            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.cbIlosc);
-            this.groupBox1.Controls.Add(this.cbNazwa);
+            this.groupBox1.Controls.Add(this.rBnazwa);
+            this.groupBox1.Controls.Add(this.rBilosc);
+            this.groupBox1.Controls.Add(this.rBlp);
             this.groupBox1.Location = new System.Drawing.Point(478, 48);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(93, 72);
+            this.groupBox1.Size = new System.Drawing.Size(93, 82);
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sortuj według:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(443, 184);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(88, 13);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "Produkty poniżej:";
+            // 
+            // tBmin
+            // 
+            this.tBmin.BackColor = System.Drawing.Color.Yellow;
+            this.tBmin.Location = new System.Drawing.Point(527, 181);
+            this.tBmin.Name = "tBmin";
+            this.tBmin.Size = new System.Drawing.Size(68, 20);
+            this.tBmin.TabIndex = 24;
+            // 
+            // btOrder
+            // 
+            this.btOrder.Location = new System.Drawing.Point(506, 207);
+            this.btOrder.Name = "btOrder";
+            this.btOrder.Size = new System.Drawing.Size(100, 23);
+            this.btOrder.TabIndex = 25;
+            this.btOrder.Text = "Wyświetl";
+            this.btOrder.UseVisualStyleBackColor = true;
+            this.btOrder.Click += new System.EventHandler(this.btOrder_Click);
+            // 
+            // rBlp
+            // 
+            this.rBlp.AutoSize = true;
+            this.rBlp.Checked = true;
+            this.rBlp.Location = new System.Drawing.Point(6, 19);
+            this.rBlp.Name = "rBlp";
+            this.rBlp.Size = new System.Drawing.Size(33, 17);
+            this.rBlp.TabIndex = 0;
+            this.rBlp.TabStop = true;
+            this.rBlp.Text = "lp";
+            this.rBlp.UseVisualStyleBackColor = true;
+            // 
+            // rBilosc
+            // 
+            this.rBilosc.AutoSize = true;
+            this.rBilosc.Location = new System.Drawing.Point(6, 39);
+            this.rBilosc.Name = "rBilosc";
+            this.rBilosc.Size = new System.Drawing.Size(46, 17);
+            this.rBilosc.TabIndex = 1;
+            this.rBilosc.TabStop = true;
+            this.rBilosc.Text = "ilosc";
+            this.rBilosc.UseVisualStyleBackColor = true;
+            // 
+            // rBnazwa
+            // 
+            this.rBnazwa.AutoSize = true;
+            this.rBnazwa.Location = new System.Drawing.Point(6, 58);
+            this.rBnazwa.Name = "rBnazwa";
+            this.rBnazwa.Size = new System.Drawing.Size(56, 17);
+            this.rBnazwa.TabIndex = 2;
+            this.rBnazwa.TabStop = true;
+            this.rBnazwa.Text = "nazwa";
+            this.rBnazwa.UseVisualStyleBackColor = true;
+            // 
+            // informacjeToolStripMenuItem
+            // 
+            this.informacjeToolStripMenuItem.Name = "informacjeToolStripMenuItem";
+            this.informacjeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.informacjeToolStripMenuItem.Text = "Informacje";
+            this.informacjeToolStripMenuItem.Click += new System.EventHandler(this.informacjeToolStripMenuItem_Click);
             // 
             // FormMain
             // 
@@ -283,6 +347,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(642, 262);
+            this.Controls.Add(this.btOrder);
+            this.Controls.Add(this.tBmin);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btDelete);
@@ -301,9 +368,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "FormMain";
-            this.Text = "FormMain";
+            this.Text = "Baza danych";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -336,8 +405,14 @@
         private System.Windows.Forms.CheckBox cbEdit;
         private System.Windows.Forms.Button btDelete;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.CheckBox cbNazwa;
-        private System.Windows.Forms.CheckBox cbIlosc;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox tBmin;
+        private System.Windows.Forms.Button btOrder;
+        private System.Windows.Forms.ToolStripMenuItem ąToolStripMenuItem;
+        private System.Windows.Forms.RadioButton rBnazwa;
+        private System.Windows.Forms.RadioButton rBilosc;
+        private System.Windows.Forms.RadioButton rBlp;
+        private System.Windows.Forms.ToolStripMenuItem informacjeToolStripMenuItem;
     }
 }
